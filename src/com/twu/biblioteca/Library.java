@@ -24,7 +24,6 @@ public class Library {
 
     public String showBooksDetails() {
         String booksList = "";
-
         for (Book book : books) {
             booksList = booksList + book.getDetails() + "\n";
         }

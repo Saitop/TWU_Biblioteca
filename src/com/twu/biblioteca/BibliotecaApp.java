@@ -14,12 +14,18 @@ public class BibliotecaApp {
         System.out.println("=====================================================");
         System.out.println("Welcome to Bibiloteca! Enjoy you adventure in books!");
         System.out.println("=====================================================");
+        System.out.println(" ");
     }
 
     private static void showAllBooksInLibrary() {
         List<Book> books = new ArrayList<Book>();
-        Book harryPotter = new Book("Harry Potter", "J.K. Rowling","1997");
-        books.add(harryPotter);
+        Book theGreatGatsby = new Book("The Great Gatsby", "F. Scott Fitzgerald", "1925");
+        Book refactoring = new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", "1999");
+        Book tdd = new Book("Test-Driven Development by Example", "Kent Beck", "2003");
+
+        books.add(theGreatGatsby);
+        books.add(refactoring);
+        books.add(tdd);
 
         Library library = new Library(books);
         String booklist = library.showBooksDetails();
