@@ -21,4 +21,13 @@ public class Library {
     public List<Book> getBooks() {
         return books;
     }
+
+    public String showBooksDetails() {
+        String booksList = "";
+
+        for (Book book : books) {
+            booksList = booksList + book.getDetails() + "\n";
+        }
+        return booksList;
+    }
 }

@@ -23,6 +23,4 @@ public class BookTests {
         assertThat(tddDetail, is("Test-Driven Development by Example | Kent Beck | 2003"));
     }
 
-
-
 }
