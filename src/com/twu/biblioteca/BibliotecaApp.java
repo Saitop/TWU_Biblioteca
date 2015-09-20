@@ -28,7 +28,7 @@ public class BibliotecaApp {
         books.add(tdd);
 
         Library library = new Library(books);
-        String booklist = library.showBooksDetails();
-        System.out.print(booklist);
+        String booksDetails = library.showBooks();
+        System.out.print(booksDetails);
     }
 }

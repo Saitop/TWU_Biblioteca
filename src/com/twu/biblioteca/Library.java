@@ -22,7 +22,7 @@ public class Library {
         return books;
     }
 
-    public String showBooksDetails() {
+    public String showBooks() {
         String booksList = "";
         for (Book book : books) {
             booksList = booksList + book.getDetails() + "\n";
