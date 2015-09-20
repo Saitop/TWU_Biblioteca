@@ -9,13 +9,14 @@ public class Book {
     private String author;
     private String publishedYear;
 
-    public Book(String title, String author, String yearPublished) {
+    public Book(String title, String author, String publishedYear) {
         this.title = title;
         this.author = author;
-        this.publishedYear = yearPublished;
+        this.publishedYear = publishedYear;
     }
 
-    public String getDetailofBook() {
+
+    public String getDetails() {
         String bookDetail = String.format("%s | %s | %s", title, author, publishedYear);
         return bookDetail;
     }
