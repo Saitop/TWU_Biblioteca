@@ -43,6 +43,8 @@ public class BibliotecaApp {
             case LIST_BOOKS:
                 showAllBooksInLibrary();
                 break;
+            default:
+                System.out.println(" Select a valid option!");
         }
     }
 
