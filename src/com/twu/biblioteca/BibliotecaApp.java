@@ -9,8 +9,10 @@ public class BibliotecaApp {
     private static boolean isRunning = true;
     public final static int LIST_BOOKS = 1;
     public final static int CHECK_OUT_BOOK = 2;
-    public final static int QUIT = 3;
+    public final static int RETURN_BOOK = 3;
+    public final static int QUIT = 4;
     private static List<Book> books = new ArrayList<Book>();
+    private static List<Book> booksRestore = new ArrayList<Book>();
     public static Book bookTemp = new Book();
     private static Library library;
 
@@ -34,6 +36,9 @@ public class BibliotecaApp {
         books.add(refactoring);
         books.add(tdd);
 
+        booksRestore.add(theGreatGatsby);
+        booksRestore.add(refactoring);
+        booksRestore.add(tdd);
         library = new Library(books);
     }
 
@@ -46,7 +51,8 @@ public class BibliotecaApp {
         System.out.println("* Main Menu :                      *");
         System.out.println("*       1. List Books              *");
         System.out.println("*       2. Checkout Book           *");
-        System.out.println("*       3. Quit                    *");
+        System.out.println("*       3. Return Books            *");
+        System.out.println("*       4. Quit                    *");
         System.out.println("*                                  *");
         System.out.print("* please choose your command  : ");
         Scanner inputScanner = new Scanner(System.in);
@@ -69,12 +75,30 @@ public class BibliotecaApp {
                 checkOutBookId = inputScanner.nextLine();
                 checkOutBook(books,checkOutBookId);
                 break;
+            case RETURN_BOOK:
+                System.out.println("please select the book you want to return (input the id of the book): ");
+                String ReturnBookId;
+                ReturnBookId = inputScanner.nextLine();
+                returnBook(ReturnBookId);
+                break;
             case QUIT:
                 isRunning = false ;
                 break;
             default:
                 System.out.println(" Select a valid option!");
         }
+    }
+
+    private static int returnBook(String returnBookId) {
+        if(isExistBook(booksRestore, returnBookId)){
+            Book book = bookTemp;
+            if(!isExistBook(books, returnBookId)){
+                books.add(book);
+                System.out.println("successful return book!");
+            }
+        }
+        else System.out.println("unsuccessful return book!!");
+        return books.size();
     }
 
     private static int checkOutBook(List<Book> books, String checkOutBookId) {
