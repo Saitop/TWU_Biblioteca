@@ -26,10 +26,15 @@ public class BibliotecaApp {
     }
 
     private static void mainMenu() {
-        System.out.println("************************************");
-        System.out.println("       1.List Books       ");
-        System.out.println("************************************");
         System.out.println(" ");
+        System.out.println("* * * * * * * * * * * * * * * * *  *");
+        System.out.println("* Main Menu :                      *");
+        System.out.println("*       1.List Books               *");
+        System.out.println("*                                  *");
+        System.out.println("* please choose your next command  *");
+        System.out.println("* * * * * * * * * * * * * * * * *  *");
+        System.out.println(" ");
+
     }
 
     private static void parseCommand(int cmd) {
