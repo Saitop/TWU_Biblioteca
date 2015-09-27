@@ -2,13 +2,44 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class BibliotecaApp {
 
+    public final static int LIST_BOOKS = 1;
     public static void main(String[] args) {
+        Scanner inputScanner = new Scanner(System.in);
+
         welcomeInfo();
-        showAllBooksInLibrary();
+
+
+        while(true){
+            mainMenu();
+            int choice = 0;
+            String input = null;
+            input = inputScanner.nextLine();
+            choice = Integer.parseInt(input);
+            parseCommand(choice);
+        }
+
+
     }
+
+    private static void mainMenu() {
+        System.out.println("************************************");
+        System.out.println("       1.List Books       ");
+        System.out.println("************************************");
+        System.out.println(" ");
+    }
+
+    private static void parseCommand(int cmd) {
+        switch(cmd){
+            case LIST_BOOKS:
+                showAllBooksInLibrary();
+                break;
+        }
+    }
+
 
     private static void welcomeInfo() {
         System.out.println("=====================================================");
