@@ -14,8 +14,10 @@ public class Library {
     }
 
 
-    public void setBooks(List<Book> books) {
+    public Library setBooks(List<Book> books) {
         this.books = books;
+        Library library= new Library(books);
+        return library ;
     }
 
     public List<Book> getBooks() {

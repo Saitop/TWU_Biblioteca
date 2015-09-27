@@ -17,9 +17,20 @@ public class Book {
         this.publishedYear = publishedYear;
     }
 
+    public Book() {
+
+    }
+
+    public void setBook(int id, String title, String author, String publishedYear){
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.publishedYear = publishedYear;
+    }
+
 
     public String getDetails() {
-        String bookDetail = String.format("%s | %s | %s", title, author, publishedYear);
+        String bookDetail = String.format("%d : %s | %s | %s", id, title, author, publishedYear);
         return bookDetail;
     }
 }
