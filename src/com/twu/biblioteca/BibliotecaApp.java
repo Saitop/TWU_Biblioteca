@@ -67,7 +67,7 @@ public class BibliotecaApp {
                 System.out.println("please select the book you want to checkout (input the id of the book): ");
                 String checkOutBookId;
                 checkOutBookId = inputScanner.nextLine();
-                checkOutBook(checkOutBookId);
+                checkOutBook(books,checkOutBookId);
                 break;
             case QUIT:
                 isRunning = false ;
@@ -77,23 +77,26 @@ public class BibliotecaApp {
         }
     }
 
-    private static void checkOutBook(String checkOutBookId) {
-        int idOfBook = Integer.parseInt(checkOutBookId);
-        for(Book book : books){
-            if (book.getId()==idOfBook){
-                bookTemp = book;
-            }
-        }
-        System.out.println(bookTemp.getDetails());
-        System.out.println("Are you sure to delete this book ?");
-        System.out.println("YSE = 1, NO = 2 ");
-        Scanner inputScanner = new Scanner(System.in);
-        int choice = Integer.parseInt(inputScanner.nextLine());
-        if (choice==1) {
+    private static int checkOutBook(List<Book> books, String checkOutBookId) {
+        if(isExistBook(books, checkOutBookId)){
             books.remove(bookTemp);
             System.out.println("Thank you! Enjoy the book");
         }
+        else System.out.println("That book is not available.");
+        return books.size();
 
+
+    }
+
+    private static boolean isExistBook(List<Book> books, String checkOutBookId) {
+        int idOfBook = Integer.parseInt(checkOutBookId);
+        for(Book book : books){
+            bookTemp = book;
+            if (bookTemp.getId()==idOfBook){
+                return true;
+            }
+        }
+        return false;
     }
 
 

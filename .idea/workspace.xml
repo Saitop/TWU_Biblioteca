@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e337cdf-0846-4fc3-9612-ceeea9793027" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7912088">
-              <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.07692308">
+              <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#363#369#0" expanded="true" />
@@ -695,12 +693,12 @@
       <updated>1442420456985</updated>
       <workItem from="1442420457344" duration="481000" />
       <workItem from="1442502997769" duration="15351000" />
-      <workItem from="1443339605153" duration="15146000" />
+      <workItem from="1443339605153" duration="16251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30978000" />
+    <option name="totallyTimeSpent" value="32083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="74" width="1273" height="810" extended-state="0" />
@@ -952,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7912088">
-          <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.07692308">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#363#369#0" expanded="true" />
