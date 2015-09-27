@@ -28,6 +28,9 @@ public class Book {
         this.publishedYear = publishedYear;
     }
 
+    public int getId(){
+        return this.id;
+    }
 
     public String getDetails() {
         String bookDetail = String.format("%d : %s | %s | %s", id, title, author, publishedYear);

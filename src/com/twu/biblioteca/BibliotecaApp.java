@@ -79,7 +79,11 @@ public class BibliotecaApp {
 
     private static void checkOutBook(String checkOutBookId) {
         int idOfBook = Integer.parseInt(checkOutBookId);
-        bookTemp = books.get(idOfBook-1);
+        for(Book book : books){
+            if (book.getId()==idOfBook){
+                bookTemp = book;
+            }
+        }
         System.out.println(bookTemp.getDetails());
         System.out.println("Are you sure to delete this book ?");
         System.out.println("YSE = 1, NO = 2 ");
@@ -87,6 +91,7 @@ public class BibliotecaApp {
         int choice = Integer.parseInt(inputScanner.nextLine());
         if (choice==1) {
             books.remove(bookTemp);
+            System.out.println("Thank you! Enjoy the book");
         }
 
     }
