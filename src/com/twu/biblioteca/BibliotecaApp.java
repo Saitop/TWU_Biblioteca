@@ -6,19 +6,21 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
+    private static boolean isRunning = true;
     public final static int LIST_BOOKS = 1;
+    public final static int QUIT = 2;
 
     public static void main(String[] args) {
         welcomeInfo();
 
 
-        while(true){
+        while(isRunning){
             int command = mainMenu();
             parseCommand(command);
         }
 
-
     }
+
 
     private static int mainMenu() {
         int choice = 0;
@@ -26,8 +28,8 @@ public class BibliotecaApp {
         System.out.println(" ");
         System.out.println("* * * * * * * * * * * * * * * * *  *");
         System.out.println("* Main Menu :                      *");
-        System.out.println("*       1.List Books               *");
-        System.out.println("*                                  *");
+        System.out.println("*       1. List Books              *");
+        System.out.println("*       2. Quit                    *");
         System.out.println("*                                  *");
         System.out.print  ("* please choose your command  : ");
         Scanner inputScanner = new Scanner(System.in);
@@ -42,6 +44,9 @@ public class BibliotecaApp {
         switch(cmd){
             case LIST_BOOKS:
                 showAllBooksInLibrary();
+                break;
+            case QUIT:
+                isRunning = false ;
                 break;
             default:
                 System.out.println(" Select a valid option!");
