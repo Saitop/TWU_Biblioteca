@@ -7,33 +7,34 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public final static int LIST_BOOKS = 1;
-    public static void main(String[] args) {
-        Scanner inputScanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
         welcomeInfo();
 
 
         while(true){
-            mainMenu();
-            int choice = 0;
-            String input = null;
-            input = inputScanner.nextLine();
-            choice = Integer.parseInt(input);
-            parseCommand(choice);
+            int command = mainMenu();
+            parseCommand(command);
         }
 
 
     }
 
-    private static void mainMenu() {
+    private static int mainMenu() {
+        int choice = 0;
+
         System.out.println(" ");
         System.out.println("* * * * * * * * * * * * * * * * *  *");
         System.out.println("* Main Menu :                      *");
         System.out.println("*       1.List Books               *");
         System.out.println("*                                  *");
-        System.out.println("* please choose your next command  *");
+        System.out.println("*                                  *");
+        System.out.print  ("* please choose your command  : ");
+        Scanner inputScanner = new Scanner(System.in);
+        choice = Integer.parseInt(inputScanner.nextLine());
         System.out.println("* * * * * * * * * * * * * * * * *  *");
         System.out.println(" ");
+        return choice;
 
     }
 
