@@ -10,7 +10,8 @@ public class BibliotecaApp {
     public final static int LIST_BOOKS = 1;
     public final static int CHECK_OUT_BOOK = 2;
     public final static int RETURN_BOOK = 3;
-    public final static int QUIT = 4;
+    public final static int LIST_MOVIES = 4;
+    public final static int QUIT = 5;
     private static List<Book> books = new ArrayList<Book>();
     private static List<Book> booksRestore = new ArrayList<Book>();
     public static Book bookTemp = new Book();
@@ -52,7 +53,8 @@ public class BibliotecaApp {
         System.out.println("*       1. List Books              *");
         System.out.println("*       2. Checkout Book           *");
         System.out.println("*       3. Return Books            *");
-        System.out.println("*       4. Quit                    *");
+        System.out.println("*       4. List Movies             *");
+        System.out.println("*       5. Quit                    *");
         System.out.println("*                                  *");
         System.out.print("* please choose your command  : ");
         Scanner inputScanner = new Scanner(System.in);
@@ -81,12 +83,19 @@ public class BibliotecaApp {
                 ReturnBookId = inputScanner.nextLine();
                 returnBook(ReturnBookId);
                 break;
+            case LIST_MOVIES:
+                showAllMoviesInLibrary(library);
+                break;
             case QUIT:
                 isRunning = false ;
                 break;
             default:
                 System.out.println(" Select a valid option!");
         }
+    }
+
+    private static void showAllMoviesInLibrary(Library library) {
+
     }
 
     private static int returnBook(String returnBookId) {
