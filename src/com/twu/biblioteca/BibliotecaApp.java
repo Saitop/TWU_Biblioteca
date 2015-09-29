@@ -13,9 +13,13 @@ public class BibliotecaApp {
     public final static int LIST_MOVIES = 4;
     public final static int QUIT = 5;
     private static List<Book> books = new ArrayList<Book>();
+    private static List<Movie> movies = new ArrayList<Movie>();
     private static List<Book> booksRestore = new ArrayList<Book>();
+    private static List<Movie> moviesRestore = new ArrayList<Movie>();
     public static Book bookTemp = new Book();
+    public static Movie movieTemp = new Movie();
     private static Library library;
+    private static Library library2;
 
     public static void main(String[] args) {
         welcomeInfo();
@@ -33,6 +37,7 @@ public class BibliotecaApp {
         Book refactoring = new Book(2,"Refactoring: Improving the Design of Existing Code", "Martin Fowler", "1999");
         Book tdd = new Book(3, "Test-Driven Development by Example", "Kent Beck", "2003");
 
+
         books.add(theGreatGatsby);
         books.add(refactoring);
         books.add(tdd);
@@ -41,6 +46,24 @@ public class BibliotecaApp {
         booksRestore.add(refactoring);
         booksRestore.add(tdd);
         library = new Library(books);
+
+
+        Movie m1 = new Movie(1, "The Godfather", "1972", " Francis Ford Coppola", "9.2");
+        Movie m2 = new Movie(2, "The Godfather Part II", "1974", " Francis Ford Coppola", "9.1");
+        Movie m3 = new Movie(3, "The Godfather Part III", "1990", " Francis Ford Coppola", "7.6");
+        Movie m4 = new Movie(4, "The pursuit of happiness", "2006", "Gabriele Muccino", "8");
+
+        movies.add(m1);
+        movies.add(m2);
+        movies.add(m3);
+        movies.add(m4);
+
+        moviesRestore.add(m1);
+        moviesRestore.add(m2);
+        moviesRestore.add(m3);
+        moviesRestore.add(m4);
+
+        library2 = new Library(movies,null);
     }
 
 
@@ -84,7 +107,7 @@ public class BibliotecaApp {
                 returnBook(ReturnBookId);
                 break;
             case LIST_MOVIES:
-                showAllMoviesInLibrary(library);
+                showAllMoviesInLibrary(library2);
                 break;
             case QUIT:
                 isRunning = false ;
@@ -95,7 +118,8 @@ public class BibliotecaApp {
     }
 
     private static void showAllMoviesInLibrary(Library library) {
-
+        String movieDetails = library.showMovies();
+        System.out.print(movieDetails);
     }
 
     private static int returnBook(String returnBookId) {

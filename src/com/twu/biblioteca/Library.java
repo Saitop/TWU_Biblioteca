@@ -8,9 +8,14 @@ import java.util.List;
  */
 public class Library {
     List<Book> books = new ArrayList<Book>();
+    List<Movie> movies = new ArrayList<Movie>();
 
     public Library(List<Book> books) {
         this.books = books;
+    }
+
+    public Library(List<Movie> movies, List<Book> books) {
+        this.movies = movies;
     }
 
 
@@ -20,8 +25,17 @@ public class Library {
         return library ;
     }
 
+    public Library setMovies(List<Movie> movies) {
+        this.movies = movies;
+        Library library = new Library(movies, null);
+        return library;
+    }
+
     public List<Book> getBooks() {
         return books;
+    }
+    public List<Movie> getMovies() {
+        return movies;
     }
 
     public String showBooks() {
@@ -31,4 +45,13 @@ public class Library {
         }
         return booksList;
     }
+    public String showMovies() {
+        String moviesList = "";
+        for (Movie movie : movies) {
+            moviesList = moviesList + movie.getDetails() + "\n";
+        }
+        return moviesList;
+    }
+
+
 }
