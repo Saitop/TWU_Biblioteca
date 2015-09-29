@@ -11,7 +11,8 @@ public class BibliotecaApp {
     public final static int CHECK_OUT_BOOK = 2;
     public final static int RETURN_BOOK = 3;
     public final static int LIST_MOVIES = 4;
-    public final static int QUIT = 5;
+    public final static int CHECK_OUT_MOVIE = 5;
+    public final static int QUIT = 6;
     private static List<Book> books = new ArrayList<Book>();
     private static List<Movie> movies = new ArrayList<Movie>();
     private static List<Book> booksRestore = new ArrayList<Book>();
@@ -77,7 +78,8 @@ public class BibliotecaApp {
         System.out.println("*       2. Checkout Book           *");
         System.out.println("*       3. Return Books            *");
         System.out.println("*       4. List Movies             *");
-        System.out.println("*       5. Quit                    *");
+        System.out.println("*       5. Checkout Movies         *");
+        System.out.println("*       6. Quit                    *");
         System.out.println("*                                  *");
         System.out.print("* please choose your command  : ");
         Scanner inputScanner = new Scanner(System.in);
@@ -109,12 +111,38 @@ public class BibliotecaApp {
             case LIST_MOVIES:
                 showAllMoviesInLibrary(library2);
                 break;
+            case CHECK_OUT_MOVIE:
+                System.out.println("please select the book you want to checkout (input the id of the book): ");
+                String checkOutMovieId;
+                checkOutMovieId = inputScanner.nextLine();
+                checkOutMovie(movies, checkOutMovieId);
+                break;
             case QUIT:
                 isRunning = false ;
                 break;
             default:
                 System.out.println(" Select a valid option!");
         }
+    }
+
+    private static int checkOutMovie(List<Movie> movies, String checkOutMovieId) {
+        if(isExistMovie(movies, checkOutMovieId)){
+            movies.remove(movieTemp);
+            System.out.println("Thank you! Enjoy the movie");
+        }
+        else System.out.println("That movie is not available.");
+        return movies.size();
+    }
+
+    private static boolean isExistMovie(List<Movie> movies, String checkOutMovieId) {
+        int idOfMovie = Integer.parseInt(checkOutMovieId);
+        for(Movie movie : movies){
+            movieTemp = movie;
+            if (movieTemp.getId()==idOfMovie){
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void showAllMoviesInLibrary(Library library) {
@@ -141,8 +169,6 @@ public class BibliotecaApp {
         }
         else System.out.println("That book is not available.");
         return books.size();
-
-
     }
 
     private static boolean isExistBook(List<Book> books, String checkOutBookId) {
